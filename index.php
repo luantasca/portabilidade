@@ -5,18 +5,18 @@
     <title>Gerar Termo de Portabilidade - SISBSD TELEFONIA</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff8c00, #ffb347);
             margin: 0;
             padding: 0;
         }
         .container {
-            width: 500px;
+            max-width: 500px;
             margin: 50px auto;
             background: #fff;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
         }
         .logo {
             text-align: center;
@@ -27,34 +27,49 @@
         }
         h2 {
             text-align: center;
-            color: #ff8c00; /* laranja */
-            margin-bottom: 20px;
+            color: #ff8c00;
+            margin-bottom: 25px;
         }
         label {
             font-weight: bold;
             display: block;
-            margin-top: 10px;
+            margin-top: 15px;
+            color: #333;
         }
         input {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-top: 5px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #ff8c00;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255,140,0,0.5);
         }
         button {
             width: 100%;
-            padding: 12px;
-            background-color: #ff8c00; /* laranja */
+            padding: 14px;
+            background-color: #ff8c00;
             color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 16px;
-            margin-top: 20px;
+            margin-top: 25px;
             cursor: pointer;
+            transition: 0.3s;
         }
         button:hover {
             background-color: #e67e00;
+            transform: scale(1.02);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #555;
         }
     </style>
 </head>
@@ -82,6 +97,9 @@
 
             <button type="submit">Gerar PDF</button>
         </form>
+        <div class="footer">
+            © 2026 SISBSD TELEFONIA - Todos os direitos reservados
+        </div>
     </div>
 </body>
 </html>
