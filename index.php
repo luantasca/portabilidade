@@ -6,7 +6,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff8c00, #ffb347);
+            background: #f4f4f4; /* fundo neutro */
             margin: 0;
             padding: 0;
         }
@@ -15,85 +15,86 @@
             margin: 50px auto;
             background: #fff;
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-        }
-        .logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .logo img {
-            max-width: 200px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
         }
         h2 {
             text-align: center;
-            color: #ff8c00;
+            color: #333;
             margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 15px;
         }
         label {
             font-weight: bold;
             display: block;
-            margin-top: 15px;
+            margin-bottom: 5px;
             color: #333;
         }
         input {
             width: 100%;
             padding: 10px;
-            margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 6px;
             transition: 0.3s;
         }
         input:focus {
-            border-color: #ff8c00;
+            border-color: #666;
             outline: none;
-            box-shadow: 0 0 5px rgba(255,140,0,0.5);
+            box-shadow: 0 0 5px rgba(100,100,100,0.3);
         }
         button {
             width: 100%;
-            padding: 14px;
-            background-color: #ff8c00;
+            padding: 12px;
+            background-color: #333; /* botão escuro neutro */
             color: #fff;
             border: none;
             border-radius: 6px;
             font-size: 16px;
-            margin-top: 25px;
+            margin-top: 20px;
             cursor: pointer;
             transition: 0.3s;
         }
         button:hover {
-            background-color: #e67e00;
-            transform: scale(1.02);
+            background-color: #555;
         }
         .footer {
             text-align: center;
             margin-top: 20px;
             font-size: 12px;
-            color: #555;
+            color: #777;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="https://static.wixstatic.com/media/da1260_6a4d0b07499041d3876623ea6434cc1d~mv2.png/v1/fill/w_153,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_custom.png" alt="SISBSD TELEFONIA">
-        </div>
         <h2>Gerar Termo de Portabilidade</h2>
         <form action="gerar_pdf.php" method="post">
-            <label>Razão Social / Nome Completo:</label>
-            <input type="text" name="nome" required>
+            <div class="form-group">
+                <label>Razão Social / Nome Completo:</label>
+                <input type="text" name="nome" required>
+            </div>
 
-            <label>CNPJ / CPF:</label>
-            <input type="text" name="cpf_cnpj" required>
+            <div class="form-group">
+                <label>CNPJ / CPF:</label>
+                <input type="text" name="cpf_cnpj" required>
+            </div>
 
-            <label>Endereço Completo:</label>
-            <input type="text" name="endereco" required>
+            <div class="form-group">
+                <label>Endereço Completo:</label>
+                <input type="text" name="endereco" required>
+            </div>
 
-            <label>Operadora Doadora:</label>
-            <input type="text" name="operadora_doadora" required>
+            <div class="form-group">
+                <label>Operadora Doadora:</label>
+                <input type="text" name="operadora_doadora" required>
+            </div>
 
-            <label>Número do Telefone:</label>
-            <input type="text" name="telefone" required>
+            <div class="form-group">
+                <label>Número do Telefone:</label>
+                <input type="text" name="telefone" required>
+            </div>
 
             <button type="submit">Gerar PDF</button>
         </form>
