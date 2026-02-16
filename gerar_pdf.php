@@ -5,7 +5,7 @@ class PDF extends FPDF {
     // Cabeçalho
     function Header() {
         $this->SetFont('Arial','B',16);
-        $this->SetTextColor(255,140,0);
+        $this->SetTextColor(0,0,0); // preto
         $this->Cell(0,10,utf8_decode('TERMO DE ACEITE - SOLICITAÇÃO DE PORTABILIDADE'),0,1,'C');
         $this->Ln(10);
     }
@@ -14,7 +14,7 @@ class PDF extends FPDF {
     function Footer() {
         $this->SetY(-15);
         $this->SetFont('Arial','I',8);
-        $this->SetTextColor(100,100,100);
+        $this->SetTextColor(0,0,0); // preto
         $this->Cell(0,10,utf8_decode('SISBSD TELEFONIA - Página ').$this->PageNo().'/{nb}',0,0,'C');
     }
 }
@@ -33,12 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Seção: Dados do contratante
     $pdf->SetFont('Arial','B',12);
-    $pdf->SetTextColor(255,140,0);
+    $pdf->SetTextColor(0,0,0); // preto
     $pdf->Cell(0,10,utf8_decode('DADOS DO CONTRATANTE'),0,1,'L');
     $pdf->SetFont('Arial','',11);
-    $pdf->SetTextColor(0,0,0);
 
-    // Alterado aqui: "Razão Social / Nome"
     $pdf->Cell(60,8,utf8_decode('Razão Social / Nome:'),1);
     $pdf->Cell(130,8,utf8_decode($nome),1,1);
 
@@ -55,10 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Seção: Informações do número
     $pdf->SetFont('Arial','B',12);
-    $pdf->SetTextColor(255,140,0);
+    $pdf->SetTextColor(0,0,0); // preto
     $pdf->Cell(0,10,utf8_decode('INFORMAÇÕES DO(S) NÚMERO(S)'),0,1,'L');
     $pdf->SetFont('Arial','',11);
-    $pdf->SetTextColor(0,0,0);
 
     $pdf->Cell(60,8,utf8_decode('Número do Telefone:'),1);
     $pdf->Cell(130,8,utf8_decode($telefone),1,1);
