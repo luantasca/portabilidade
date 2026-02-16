@@ -81,7 +81,7 @@
         <h2>Gerar Termo de Portabilidade</h2>
         <form action="gerar_pdf.php" method="post" target="_blank" onsubmit="showSuccessMessage()">
             <div class="form-group">
-                <label>Razão Social / Nome Completo:</label>
+                <label>Razão Social / Nome:</label>
                 <input type="text" name="nome" required>
             </div>
 
