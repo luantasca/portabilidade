@@ -73,6 +73,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pdf->Ln(20);
     $pdf->Cell(0,8,utf8_decode("ASSINATURA: ___________________________"),0,1);
 
-    $pdf->Output('I', 'termo_portabilidade.pdf');
-}
+// Sanitiza o nome para evitar espaços e caracteres especiais problemáticos
+$nomeSanitizado = preg_replace('/[^A-Za-z0-9_\-]/', '_', $nome);
+
+// Monta o nome do arquivo
+$nomeArquivo = "TERMO_DE_ACEITE_SOLICITACAO_DE_PORTABILIDADE_" . $nomeSanitizado . ".pdf";
+
+// Gera o PDF com esse nome
+$pdf->Output('I', $nomeArquivo);}
 ?>
