@@ -6,7 +6,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f4f4f4; /* fundo neutro */
+            background: #f4f4f4;
             margin: 0;
             padding: 0;
         }
@@ -47,8 +47,8 @@
         button {
             width: 100%;
             padding: 12px;
-            background-color: #333; /* botão escuro neutro */
-            color: #fff;
+            background-color: #FD6414; /* cor personalizada */
+            color: #fff; /* texto branco */
             border: none;
             border-radius: 6px;
             font-size: 16px;
@@ -57,20 +57,29 @@
             transition: 0.3s;
         }
         button:hover {
-            background-color: #555;
+            background-color: #e5530f; /* tom mais escuro no hover */
         }
-        .footer {
+        .success-message {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 6px;
             text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
-            color: #777;
         }
     </style>
+    <script>
+        function showSuccessMessage() {
+            document.getElementById("success").style.display = "block";
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h2>Gerar Termo de Portabilidade</h2>
-        <form action="gerar_pdf.php" method="post">
+        <form action="gerar_pdf.php" method="post" target="_blank" onsubmit="showSuccessMessage()">
             <div class="form-group">
                 <label>Razão Social / Nome Completo:</label>
                 <input type="text" name="nome" required>
@@ -98,8 +107,8 @@
 
             <button type="submit">Gerar PDF</button>
         </form>
-        <div class="footer">
-            © 2026 SISBSD TELEFONIA - Todos os direitos reservados
+        <div id="success" class="success-message">
+            ✅ PDF gerado com sucesso! Ele foi aberto em uma nova aba.
         </div>
     </div>
 </body>
